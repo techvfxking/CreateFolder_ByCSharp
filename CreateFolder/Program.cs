@@ -67,30 +67,7 @@ namespace CreateFolder
                         directorySecurity.ModifyAccessRule(AccessControlModification.Add, rule, out modified);
                         directoryInfo.SetAccessControl(directorySecurity);
                     }
-                }
-                
-                #region Commented out code
-                //if (!Directory.Exists(ConfigurationPath))
-                //{
-                //    directoryInfo = Directory.CreateDirectory(ConfigurationPath);
-                //    if (allUsers)
-                //    {
-                //        bool modified;
-                //        directorySecurity = directoryInfo.GetAccessControl();
-                //        rule = new FileSystemAccessRule(
-                //            securityIdentifier,
-                //            FileSystemRights.Write |
-                //            FileSystemRights.ReadAndExecute |
-                //            FileSystemRights.Modify,
-                //            InheritanceFlags.ContainerInherit |
-                //            InheritanceFlags.ObjectInherit,
-                //            PropagationFlags.InheritOnly,
-                //            AccessControlType.Allow);
-                //        directorySecurity.ModifyAccessRule(AccessControlModification.Add, rule, out modified);
-                //        directoryInfo.SetAccessControl(directorySecurity);
-                //    }
-                //} 
-                #endregion
+                }              
             }
             catch (Exception ex)
             {
